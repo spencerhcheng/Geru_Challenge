@@ -1,0 +1,17 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+<div class="content">
+
+<h2>{{ name }} </h2>
+	<h3> {{ random_quote }} </h3>
+	<h3> {{ error_msg }} </h3>
+	<h3> {{ quote_number }} {{ quote }} </h3>	
+	<ul class="a">
+		{% for quote in quotes %}
+			<li>{{ quote }} </li>
+		{% endfor %}
+	</ul>
+  <h1><span class="font-semi-bold">{{ web_display }}</span></h1>
+</div>
+{% endblock content %}
