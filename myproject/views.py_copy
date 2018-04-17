@@ -1,0 +1,62 @@
+from pyramid.view import (view_config, view_defaults)
+import requests
+import random
+
+@view_defaults(renderer='templates/mytemplate.jinja2')
+class TutorialViews:
+    def __init__(self, request):
+        self.request = request
+
+    @property
+    def counter(self):
+        session = self.request.session
+        if 'counter' in session:
+            session['counter'] += 1
+        else:
+            session['counter'] = 1
+        return session['counter'] 
+
+    # Home view. http://localhost:8080
+    @view_config(route_name='home')
+    def my_view(request):
+        web_display = "Web Challenge 1.0"
+        return {
+            'web_display':web_display,
+            'project': 'myproject'}
+
+    # Displays all quotes. http://localhost:8080/quotes
+    @view_config(route_name='quotes')
+    def quotes(self):
+        url = "https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes"
+        response = requests.get(url).json()['quotes']
+        
+        return {
+            'quotes': response,
+            'project': 'myproject'}
+
+    # Displays a random quote. http://localhost:8080/quotes/random
+    @view_config(route_name='random')
+    def random(self):
+        url = "https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes"
+        randNum = random.randint(0, 18)
+        random_quote = str(randNum) + " : " + requests.get(url).json()['quotes'][randNum]
+        return {
+            'random_quote': random_quote,
+            'project': 'myproject'}
+
+    # Displays quote denoted by number. http://localhost:8080/quotes/<quote_number>
+    @view_config(route_name='quote_by_num')
+    def quote_by_num(self):
+        url = "https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes"
+        quote_number = self.request.matchdict['quoteNum']
+        if not quote_number.isdigit() or int(quote_number) < 0 or int(quote_number) > 18:
+            error_msg = "Please enter a number between 0 and 18!"
+            return {
+                'error_msg': error_msg,
+                'project': 'myproject'}
+        quote = ": " + requests.get(url).json()['quotes'][int(quote_number)]
+        return {
+            'quote_number': quote_number,
+            'quote': quote,
+            'project': 'myproject'}
+
