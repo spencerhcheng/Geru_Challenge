@@ -1,9 +1,8 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+@import url(//fonts.googleapis.com/css?family=Libre+Franklin);
 body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  background: teal;
+  font-family: "Libre Franklin", sans-serif;
+  color: white;
+  background: linear-gradient(to right, #4371CD, #2DA980);
 }
 h1,
   font-family: "Open Sans";
@@ -81,7 +80,7 @@ p {
   font-weight: 400;
 }
 .starter-template .links ul li a, a {
-  color: #f2b7bd;
+  color: white;
   text-decoration: underline;
 }
 .starter-template .links ul li a:hover, a:hover {
@@ -98,7 +97,6 @@ p {
 .starter-template .copyright {
   margin-top: 10px;
   font-size: 0.9em;
-  color: #f2b7bd;
   float: right;
   right: 0;
 }
