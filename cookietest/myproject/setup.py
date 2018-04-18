@@ -14,6 +14,10 @@ requires = [
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
     'waitress',
+    'sqlalchemy',
+    'pyramid_tm',
+    'zope.sqlalchemy',
+    'deform'
 ]
 
 tests_require = [
@@ -47,6 +51,9 @@ setup(
     entry_points={
         'paste.app_factory': [
             'main = myproject:main',
+        ],
+        'console_scripts': [ 
+            'initialize_myproject_db = myproject.initialize_db:main',
         ],
     },
 )
