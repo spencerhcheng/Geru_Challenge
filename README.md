@@ -1,15 +1,12 @@
 ![printf](https://i.imgur.com/lpnL8nd.png)
 
-## SCHEMATIC
-![SCHEMA](https://i.imgur.com/4Y1HRWC.png)
-
 Stages of the challenge are covered in detail at:
 [Geru_Challenge](https://gist.github.com/flaviogeru/53a739e35e1523a39bf3e7a95d177918)
 
 ![Alt Text](https://media.giphy.com/media/cIsRhzdUL6DYUBWho3/giphy.gif)
 
 ## SYNOPSIS
-I enjoyed this challenge and learned a lot by using a framework and technologies I haven't used before. I started off pouring through the documentation on the Pylongs Project Pyramid website. To get familiar with the Pyramid framework, I first read the [Quick Tour of Pyramid](https://docs.pylonsproject.org/projects/pyramid/en/latest/quick_tour.html) and then worked through the [Quick Tutorial for Pyramid](https://docs.pylonsproject.org/projects/pyramid/en/latest/quick_tutorial/index.html).
+I enjoyed this challenge and learned a lot by using a framework and technologies I haven't used before. I started off pouring through the documentation on the Pylons Project Pyramid website. To get familiar with the Pyramid framework, I first read the [Quick Tour of Pyramid](https://docs.pylonsproject.org/projects/pyramid/en/latest/quick_tour.html) and then worked through the [Quick Tutorial for Pyramid](https://docs.pylonsproject.org/projects/pyramid/en/latest/quick_tutorial/index.html).
 
 This is the first time where I used a virtual environment. I saw the value of using an isolated Python environment that allows packages to be installed for use by a partifular application versus system wide. Interestingly, I found that setting the virtual environment in one window within `iterm` did not apply to the same directory in another window.
 
@@ -17,6 +14,9 @@ I decided to check out the `cookiecutter` templates - and went with the `starter
 
 There were a number of challenges to overcome during this project - such as how to generate a session id or deal with deserializing the datetime format to be inserted into the database. 
 These challenges were overcome with more reading, tutorials and simple trial and error.
+
+## SCHEMATIC
+![SCHEMA](https://i.imgur.com/4Y1HRWC.png)
 
 Some of the things I learned from this project:
 - How to effectively query the [provided API](https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes)
