@@ -21,6 +21,20 @@ DBSession = scoped_session(
     sessionmaker(extension=ZopeTransactionExtension()))
 Base = declarative_base()
 
+def json_serial(obj):
+    """
+    JSON serializer for objets not
+    serialiable by default json code
+    """
+    if isinstance(obj, datetime):
+        return obj.isoformat()
+
+def without_keys(d, keys):
+    """
+    Removes key value pairs from dictionary
+    d that match key values
+    """
+    return {x: d[x] for x in d if x not in keys}
 
 class Page(Base):
     """
@@ -29,15 +43,8 @@ class Page(Base):
     __tablename__ = 'access'
     uid = Column(Integer, primary_key=True)
     session_identifier = Column(Text)
-    accessed_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+    accessed_at = Column(DateTime, nullable=False, default=datetime.utcnow)
     page = Column(Text)
-
-    def __init__(self, session_identifier, page):
-        """
-        Instantiation of new Page class
-        """
-        self.session_identifier = session_identifier
-        self.page = page
 
 class Root(object):
     __acl__ = [(Allow, Everyone, 'view'),
