@@ -3,6 +3,22 @@ from pyramid.view import (view_config, view_defaults)
 import requests
 import random
 from myproject import quotes as q
+from .models import DBSession, Page
+import uuid
+
+
+def gen_save_idsession(session, path):
+    value = session
+    if 'id' in session:
+        print('ID exists')
+    else:
+        print('ID created')
+        value['id'] = str(uuid.uuid4())
+
+    DBSession.add(Page(session_identifier=value['id'], page=path))
+    transaction.commit()
+
+    return value
 
 @view_defaults(renderer='templates/mytemplate.jinja2')
 class TutorialViews:
