@@ -9,6 +9,14 @@ Stages of the challenge are covered in detail at:
 ![Alt Text](https://media.giphy.com/media/cIsRhzdUL6DYUBWho3/giphy.gif)
 
 ## SYNOPSIS
+I enjoyed this challenge and learned a lot by using a framework and technologies I haven't used before. I started off pouring through the documentation on the Pylongs Project Pyramid website. To get familiar with the Pyramid framework, I first read the [Quick Tour of Pyramid](https://docs.pylonsproject.org/projects/pyramid/en/latest/quick_tour.html) and then worked through the [Quick Tutorial for Pydamid](https://docs.pylonsproject.org/projects/pyramid/en/latest/quick_tutorial/index.html).
+
+This is the first time where I used a virtual environment. I saw the value of using an isolated Python environment that allows packages to be installed for use by a partifular application versus system wide. Interestingly, I found that setting the virtual environment in one window within `iterm` did not apply to the same directory in another window.
+
+I decided to check out the `cookiecutter` templates - and went with the `starter` template to kick off my project and build upon it as I went along. More information can be found [here](https://github.com/Pylons/pyramid-cookiecutter-starter)
+
+There were a number of challenges to overcome during this project - such as how to generate a session id or deal with deserializing the datetime format to be inserted into the database. 
+These challenges were overcome with more reading, tutorials and simple trial and error.
 
 Some of the things I learned from this project:
 - How to effectively query the [provided API](https://1c22eh3aj8.execute-api.us-east-1.amazonaws.com/challenge/quotes)
@@ -23,10 +31,6 @@ Some of the things I learned from this project:
 - How to save and query data into the database using `SQLAlchemy`
 - Organizing views via the `views.py` and `jinja2` templates
 - How to create and serve JSON data via an API endpoint
-
-
-## AUTHOR
-Spencer Cheng - https://github.com/spencerhcheng || [Twitter](https://twitter.com/spencerhcheng)
 
 ## ENVIRONMENT
 
@@ -137,3 +141,8 @@ Presents a page containing stored information in the `sqlalchemy` database, incl
 - [ ] | - Create custom 404 page
 - [ ] | - Incorporate navigation bar
 - [ ] | - Deploy app on web server
+
+
+## AUTHOR
+Spencer Cheng - https://github.com/spencerhcheng || [Twitter](https://twitter.com/spencerhcheng)
+
