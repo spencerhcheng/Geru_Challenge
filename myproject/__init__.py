@@ -13,7 +13,7 @@ def main(global_config, **settings):
 
     my_session_factory = SignedCookieSessionFactory(
         'spencersgeruchallenge')
-    config = Configurator(settings=settings, session_factory=my_session_factory, root_factory='models.Root')
+    config = Configurator(settings=settings, session_factory=my_session_factory, root_factory='.models.Root')
     config.include('pyramid_jinja2')
     config.add_static_view('static', 'static', cache_max_age=3600)
 
