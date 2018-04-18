@@ -1,6 +1,5 @@
 import requests
 
-
 def return_quotes():
     """
     Returns all quotes provided by API upon success
