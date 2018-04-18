@@ -16,7 +16,8 @@ requires = [
     'sqlalchemy',
     'pyramid_tm',
     'zope.sqlalchemy',
-    'deform'
+    'deform',
+    'pyramid_chameleon',
 ]
 
 tests_require = [
