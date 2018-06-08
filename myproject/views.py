@@ -95,7 +95,7 @@ class TutorialViews:
 #        return pdate.isoformat()
 
 @view_config(route_name='query', renderer='jsonp')
-def consultas(request):
+def query_sessions(request):
     db_query = DBSession.query(Page).all()
     query_list = ([ob.__dict__ for ob in db_query])
     result = []
